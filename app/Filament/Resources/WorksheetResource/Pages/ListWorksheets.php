@@ -35,7 +35,6 @@ class ListWorksheets extends ListRecords
             $tabs[$priority] = Tab::make()->label($priority)
                 ->modifyQueryUsing(
                     fn(Builder $query) => $query
-                        ->where('priority', $priority)
                 )
                 ->badge(
                     Worksheet::query()
