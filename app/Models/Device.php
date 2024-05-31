@@ -23,4 +23,9 @@ class Device extends Model
     {
         return $this->hasMany(Device::class, 'type_id');
     }
+
+    public function worksheets(): HasMany
+    {
+        return $this->hasMany(Worksheet::class);
+    }
 }
