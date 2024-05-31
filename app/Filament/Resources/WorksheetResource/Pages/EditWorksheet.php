@@ -21,4 +21,12 @@ class EditWorksheet extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        if (!isset($data['creator_id']))
+            $data['creator_id'] = auth()->user()->id;
+
+        return $data;
+    }
 }
