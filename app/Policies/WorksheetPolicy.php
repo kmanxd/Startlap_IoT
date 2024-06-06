@@ -47,5 +47,4 @@ class WorksheetPolicy
     {
         return $user->can('delete worksheets');
     }
-
 }

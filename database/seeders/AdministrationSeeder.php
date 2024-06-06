@@ -55,6 +55,11 @@ class AdministrationSeeder extends Seeder
         $deviceData3 = Permission::create(['name' => 'update devicedata']);
         $deviceData4 = Permission::create(['name' => 'delete devicedata']);
 
+        $worksheets1 = Permission::create(['name' => 'create devicedata']);
+        $worksheets2 = Permission::create(['name' => 'read devicedata']);
+        $worksheets3 = Permission::create(['name' => 'update devicedata']);
+        $worksheets4 = Permission::create(['name' => 'delete devicedata']);
+
         $adminRole = Role::create(['name' => 'admin'])->syncPermissions([
             $userPermission1,
             $userPermission2,
@@ -80,6 +85,10 @@ class AdministrationSeeder extends Seeder
             $deviceData2,
             $deviceData3,
             $deviceData4,
+            $worksheets1,
+            $worksheets2,
+            $worksheets3,
+            $worksheets4,
         ]);
         $repairerRole = Role::create(['name' => 'karbantartó'])->syncPermissions([
             $device2,
@@ -87,10 +96,15 @@ class AdministrationSeeder extends Seeder
             $deviceData2,
             $deviceData3,
             $deviceData4,
+            $worksheets1,
+            $worksheets2,
+            $worksheets3,
         ]);
         $operatorRole = Role::create(['name' => 'gépkezelő'])->syncPermissions([
             $device2,
             $deviceData2,
+            $worksheets1,
+            $worksheets2,
         ]);
 
         // CREATE ADMINS & USERS
